@@ -1,0 +1,92 @@
+html, body,
+#main_container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+  font-family:"helvetica", sans-serif;
+}
+
+section.half {
+  width:50%;
+  height:100%;
+  position: fixed;
+	top: 0;
+  z-index: 100;
+  text-align: center;
+}
+
+.side-right {
+  right:0;
+}
+
+.side-right .intro-content p span {
+  border-bottom:3px solid #ffffff;
+}
+
+.bg-blue {
+  background: #288ecf;
+  color: #ffffff;
+}
+
+.bg-white {
+  background: #ffffff;
+  color: #3f3f3f;
+}
+
+.container-link:visited {
+  color:inherit;
+  cursor: pointer;
+}
+
+a {
+  cursor:pointer;
+}
+
+.container-link:hover {
+  opacity:0.8;
+}
+
+.logo {
+  max-width:240px;
+  float:left;
+}
+
+.btn-large {
+  padding:20px;
+  border-radius:10px;
+  min-width:120px;
+  border: 1px solid #5c99d4;
+  font-size:1.6em;
+  display:inline-block;
+  box-shadow: 0px 0px 3px rgba(0,0,0,0.2);
+}
+
+.intro-content {
+  width:50%;
+  margin:auto;
+  margin-top:200px;
+}
+
+.intro-content p span {
+  display:inline-block;
+  font-size:2.2em;
+  margin:20px;
+  padding:10px;
+  border-bottom:3px solid #3f3f3f;
+}
+
+.rounded {
+  border-radius:200px;
+  border: 7px solid #5dafff;
+}
+
+.speaker-icon {
+  width:100px;
+  height:100px;
+  margin-top:50px;
+  cursor:pointer;
+}
+
+.speaker-icon:hover {
+  opacity: 0.8;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Let's Go</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+  </head>
+  <body>
+    <div id="main_container">
+      <div id="split-layout">
+
+        <section class="half bg-white">
+          <img class="logo" src="img/logo.png" />
+          <div class="intro-content">
+            <a class="container-link" href="index.html">
+              <img src="img/intro-instructor.jpg" class="intro-img rounded" />
+              <p><span>Are you...</span></p>
+              <a class="btn-large bg-blue">An Instructor?</a>
+            </a>
+          </div>
+        </section>
+
+        <section class="half bg-blue side-right">
+          <div class="intro-content">
+            <a class="container-link" href="index.html">
+              <img src="img/intro-trainee.jpg" class="intro-img rounded" />
+              <p><span>Are you...</span></p>
+              <a class="btn-large bg-white">A Trainee?</a>
+            </a>
+            <div id="speaker1">
+              <audio id="student_audio">
+                <source src="sounds/studentAudio.mp3" type="audio/mpeg"/>
+              </audio>
+              <img class="speaker-icon" src="img/speaker-icon-white.png" onClick="document.getElementById('student_audio').play(); return false;" />
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </body>
+</html>
