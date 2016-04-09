@@ -42,6 +42,10 @@ a {
   cursor:pointer;
 }
 
+.container-link {
+  color:inherit;
+}
+
 .container-link:hover {
   opacity:0.8;
 }
@@ -64,7 +68,7 @@ a {
 .intro-content {
   width:50%;
   margin:auto;
-  margin-top:200px;
+  margin-top:160px;
 }
 
 .intro-content p span {
@@ -89,4 +93,10 @@ a {
 
 .speaker-icon:hover {
   opacity: 0.8;
+}
+
+.image-full {
+  width:360px;
+  height:360px;
+  border-radius: 360px;
 }

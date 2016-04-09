@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Let's Go - choose level</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+  </head>
+  <body>
+    <div id="main_container">
+      <div id="split-layout">
+
+        <section class="half bg-white">
+          <div class="intro-content">
+            <a class="container-link" href="index.html">
+              <img src="img/drag.png" class="intro-img rounded image-full" />
+              <p><span>Drag &amp; Drop Game</span></p>
+              <span class="btn-large bg-blue">Get Ready</span>
+            </a>
+          </div>
+
+          <div id="speaker1">
+            <audio id="getReady">
+              <source src="sounds/getReady.mp3" type="audio/mpeg"/>
+            </audio>
+            <img class="speaker-icon" src="img/speaker-icon-white.png" onClick="document.getElementById('getReady').play(); return false;" />
+          </div>
+        </section>
+
+        <section class="half bg-blue side-right">
+          <div class="intro-content">
+            <a class="container-link">
+              <img src="img/anim.png" class="intro-img rounded image-full" />
+              <p><span>Get the Bus</span></p>
+              <span class="btn-large bg-white">Educational Animations</span>
+            </a>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </body>
+</html>
