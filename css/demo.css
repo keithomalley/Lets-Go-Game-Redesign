@@ -1,0 +1,130 @@
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.clearfix:before, .clearfix:after { content: ''; display: table; }
+.clearfix:after { clear: both; }
+
+body {
+	background: #ffffff;
+	color: white;
+	font-size: 100%;
+	line-height: 1.25;
+	font-family: 'calibri', Arial, sans-serif;
+}
+
+a {
+	color: rgba(0,0,0,0.25);
+	text-decoration: none;
+	outline: none;
+}
+
+#logo{
+	position: relative;
+	top:-90px;	
+}
+
+#score{
+    height:10%;
+    width: 4%;
+    font-size:3em;
+    color: #038BCC;
+    font-weight: 700;
+    background-color: transparent;
+    text-align: center;
+    border:0px;  
+	margin-top: 54px;
+}
+
+#score1{
+    font-size: 3em;
+    font-weight: 700;
+    padding-top: 100px;
+    color: #000;
+	margin-top: 54px;
+}
+
+#msg{
+	padding-top: 8px;
+	padding-left: 8px;
+}
+
+a:hover, a:focus {
+	color: rgba(0,0,0,0.6);
+}
+
+.memory-header {
+	margin: 0 auto;
+	padding: 3em 1em;
+	text-align: center;
+	color: #008bcc;
+}
+
+.memory-header h1 {
+	margin: 0;
+	font-weight: 400;
+	font-size: 3em;
+}
+
+.memory-header h1 span {
+	display: block;
+	padding: 0 0 0.6em 0.1em;
+	font-size: 0.6em;
+	opacity: 0.7;
+}
+
+/*questions*/
+section {
+	padding: 5em 2em 15em;
+	background: #008bcc;
+	text-align: center;
+}
+
+section.related {
+	padding: 3em 1em 4em;
+	background: #c22667;
+	color: rgba(0,0,0,0.4);
+	font-size: 1.5em;
+}
+
+.related > a {
+	max-width: 80%;
+	border: 2px solid rgba(0,0,0,0.3);
+	display: inline-block;
+	text-align: center;
+	margin: 20px 10px;
+	padding: 25px;
+	-webkit-transition: color 0.3s, border-color 0.3s;
+	transition: color 0.3s, border-color 0.3s;
+}
+
+.related a:hover {
+	border-color: rgba(0,0,0,0.6);
+}
+
+.related a img {
+	max-width: 100%;
+	opacity: 0.4;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+.related a:hover img,
+.related a:active img {
+	opacity: 1;
+}
+
+.related a h3 {
+	margin: 0;
+	padding: 0.5em 0 0.3em;
+	max-width: 300px;
+	font-weight: 400;
+	font-size: 0.75em;
+	text-align: left;
+}
+
+@media screen and (max-width: 44.75em) {
+	section { padding: 1em 2em; }
+}
+
+@media screen and (max-width: 25em) {
+	.memory-header { font-size: 0.8em; }
+	section.related { font-size: 1.2em; }
+}

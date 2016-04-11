@@ -1,0 +1,290 @@
+body {
+    background-image:url('../img/bg1.png');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    font-family: "calibri";
+}
+
+#list{
+    margin-left: 75%;
+    font-size: 4em;
+    color: #font-family: "calibri";;
+    font-weight: 700;
+}
+
+.ui-dialog{
+    visibility: 'hidden';
+    width: 1000px;
+    height: 800px;
+
+}
+
+#big{
+    font-weight: 700;
+    font-style: 'calibri';
+    font-size: 1em;
+}
+
+#button{
+	width: 250px;
+	height: 180px;
+	position: relative;
+	top: -80px;
+	left: -5px;
+}
+
+#speaker1{
+   width:70px;
+   height:70px;
+   float:right;
+   margin-right: 1000px;
+   margin-top: -10px;
+
+
+}
+
+#gospeaker{
+  width:70px;
+  height:70px;
+  margin-left:135px;
+  margin-top:-55px;
+}
+
+#keyDiv .text {
+position:relative;
+bottom:30px;
+left:0px;
+visibility:hidden;
+font-weight: 700;
+color: #fff;
+font-size: 4em;
+}
+
+#keyDiv:hover .text {
+visibility:visible;
+}
+
+#phoneDiv .text {
+position:relative;
+bottom:30px;
+left:0px;
+visibility:hidden;
+font-weight: 700;
+color: #fff;
+font-size: 4em;
+}
+
+#phoneDiv:hover .text {
+visibility:visible;
+}
+
+#walletDiv .text {
+position:relative;
+bottom:30px;
+left:0px;
+visibility:hidden;
+font-weight: 700;
+color: #fff;
+font-size: 4em;
+}
+
+#walletDiv:hover .text {
+visibility:visible;
+}
+
+#staplerDiv .text {
+position:relative;
+bottom:30px;
+left:0px;
+visibility:hidden;
+font-weight: 700;
+color: #fff;
+font-size: 4em;
+}
+
+#staplerDiv:hover .text {
+visibility:visible;
+}
+
+#pencilDiv .text {
+position:relative;
+bottom:30px;
+left:0px;
+visibility:hidden;
+font-weight: 700;
+color: #fff;
+font-size: 4em;
+}
+
+#pencilDiv:hover .text {
+visibility:visible;
+}
+
+#bookDiv .text {
+position:relative;
+bottom:30px;
+left:0px;
+visibility:hidden;
+font-weight: 700;
+color: #fff;
+font-size: 4em;
+}
+
+#bookDiv:hover .text {
+visibility:visible;
+}
+
+#cardDiv .text {
+position:relative;
+bottom:30px;
+left:0px;
+visibility:hidden;
+font-weight: 700;
+color: #fff;
+font-size: 4em;
+}
+
+#cardDiv:hover .text {
+visibility:visible;
+}
+
+#score{
+    height:10%;
+    width: 4%;
+    font-size:3em;
+    color: #038BCC;
+    font-weight: 700;
+    background-color: transparent;
+    text-align: center;
+    border:0px;
+    font-family: "calibri";
+    position: relative;
+    top: -100px;
+}
+
+#score1{
+    font-size: 3em;
+    font-weight: 700;
+    padding-top: 20px;
+    position: relative;
+    top: -100px;
+}
+
+#arrow{
+  display:none;
+  border:0px;
+  background-color: transparent;
+  position: relative;
+  top: -18px;
+	padding-top:20px;
+}
+
+#score2{
+    color: #000;
+}
+
+.list-c {
+    width: 30%;
+    position: relative;
+    float: right;
+}
+.list-c > img {
+    width: 100%;
+    height: auto;
+}
+.list-c > div{
+    position: absolute;
+    right: 0;
+    width:85%;
+    height:9%;
+    border:3px solid red;
+    font-family: "calibri";
+    font-size: 3.5em;
+    color: #038BCC;
+    font-weight: 700;
+}
+#div1{
+    top: 20%;
+    background-color: #F2F2F2;
+}
+
+#div2{
+    top: 37.7%;
+    background-color: #F2F2F2;
+}
+
+#div3{
+    top: 54.7%;
+    background-color: #F2F2F2;
+}
+
+#div4{
+    top: 72.5%;
+    background-color: #F2F2F2;
+}
+
+.wrapper:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.list-c div > img {
+    max-height: 100%;
+}
+.wrapper {
+    position: relative;
+    padding-bottom: 8%;
+}
+.wrapper div > img {
+    width: 100%;
+    height: auto;
+}
+
+#keyDiv{
+    position: absolute;
+    top: 45%;
+    left: 47%;
+    width: 10%;
+}
+
+#walletDiv{
+    position: absolute;
+    top: 40%;
+    left: 7%;
+    width: 8%;
+}
+
+#phoneDiv{
+    position: absolute;
+    top: 40%;
+    left: 17%;
+    width: 5%;
+}
+
+#bookDiv{
+    position: absolute;
+    top: 35%;
+    left: 31%;
+    width: 15%;
+}
+
+#staplerDiv{
+    position: absolute;
+    top: 48%;
+    left: 24%;
+    width: 10%;
+}
+
+#pencilDiv{
+    position: absolute;
+    top: 40%;
+    left: 24%;
+    width: 10%;
+}
+
+#cardDiv{
+    position: absolute;
+    top: 53%;
+    left: 15%;
+    width: 7%;
+}
