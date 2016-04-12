@@ -159,7 +159,7 @@ visibility:visible;
     border:0px;
     font-family: "calibri";
     position: relative;
-    top: -100px;
+    top:-30px;
 }
 
 #score1{
@@ -167,7 +167,7 @@ visibility:visible;
     font-weight: 700;
     padding-top: 20px;
     position: relative;
-    top: -100px;
+    top:-30px;
 }
 
 #arrow{

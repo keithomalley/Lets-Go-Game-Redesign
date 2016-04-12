@@ -30,10 +30,9 @@
 			<!--used for dynamic form append-->
 			<div id="temp"></div>
 			<script lang="javascript">
-				var locate = window.location;
-				document.form2.score2.value = locate;
-
-				var text = document.form2.score2.value;
+				var locate=window.location;
+				document.form2.score2.value=locate;
+				var text=document.form2.score2.value;
 
 					// function keepScore(question, answer)
 					// {
@@ -45,73 +44,53 @@
 					// 	}
 
 					// }
-				 //   var del = keepScore(1,1);
+				 //   var del=keepScore(1,1);
 
 			</script>
 				<form id="theForm" class="simform">
 					<div class="simform-inner">
 						<ol class="questions">
 							<li>
-								<div id = "speaker1">
-              						<audio id="payforthings">
-                  						<source src = "sounds/payforthings.mp3" type = "audio/mpeg"/>
-                					</audio>
-
-                   				<img src="img/speaker-icon-white.png" width= "100px" height= "100px" onClick="document.getElementById('payforthings').play(); return false;" /></div>
-
-
+								<div id="speaker1">
+      						<audio id="payforthings">
+	      						<source src="sounds/payforthings.mp3" type="audio/mpeg"/>
+        					</audio>
+           				<img src="img/speaker-icon-white.png" width= "100px" height= "100px" onClick="document.getElementById('payforthings').play(); return false;" />
+								</div>
 								<span><label for="q1">To pay for things you will need your...  <br></label></span>
-
-
-								<input type="radio" id="ansBtn1a" name="ansBtn1" value="wallet" width = "50px" height = "50px"><label for="ansBtn1a"><img id="wallet" value="WALLET" src="img/wallet.png" width="120" height="120"></label><br/>
+								<input type="radio" id="ansBtn1a" name="ansBtn1" value="wallet" width="50px" height="50px"><label for="ansBtn1a"><img id="wallet" value="WALLET" src="img/wallet.png" width="120" height="120"></label><br/>
 								<input type="radio" id="ansBtn1b" name="ansBtn1" value="keys"><label for="ansBtn1b"><img id="keys" value="KEYS" src="img/keys.png" width ="205" height= "60">
 							</li>
 							<li>
-								<div id = "speaker2">
-              						<audio id="callortext">
-                  						<source src = "sounds/callortext.mp3" type = "audio/mpeg"/>
-                					</audio>
-
-
-                   				<img src="img/speaker-icon-white.png" width = "100px" height = "100px"  onClick="document.getElementById('callortext').play(); return false;" />
-                   			</div>
-
-
+								<div id="speaker2">
+	    						<audio id="callortext">
+	      						<source src="sounds/callortext.mp3" type="audio/mpeg"/>
+	      					</audio>
+	         				<img src="img/speaker-icon-white.png" width="100px" height="100px"  onClick="document.getElementById('callortext').play(); return false;" />
+           			</div>
 								<span><label for="q2">To call or text you will need a...  <br></label></span>
-
-
-
-
 								<input type="radio" id="ansBtn2a" name="ansBtn2" value="phone"><label for="ansBtn2a"><img id="phone" value="PHONE" src="img/phone2.png" width="65" height="120"><br/>
 								<input type="radio" id="ansBtn2b" name="ansBtn2" value="card"><label for="ansBtn2b"><img id="card" value="CARD" src="img/card.png"/>
 							</li>
 							<li>
-								<div id = "speaker3">
-              						<audio id="house">
-                  						<source src = "sounds/house.mp3" type = "audio/mpeg"/>
-                					</audio>
-
-                   				<img src="img/speaker-icon-white.png" width= "100px" height= "100px" onClick="document.getElementById('house').play(); return false;" /></div>
-
-
+								<div id="speaker3">
+	    						<audio id="house">
+	      						<source src="sounds/house.mp3" type="audio/mpeg"/>
+	      					</audio>
+           				<img src="img/speaker-icon-white.png" width= "100px" height= "100px" onClick="document.getElementById('house').play(); return false;" />
+								</div>
 								<span><label for="q3">To get into the house you will need your...  <br></label></span>
-
-
 								<input type="radio" id="ansBtn3a" name="ansBtn3" value="keys"><label for="ansBtn3a"><img id="keys" value="KEYS" src="img/keys.png" width ="205" height= "60"><br/>
 								<input type="radio" id="ansBtn3b" name="ansBtn3" value="card"><label for="ansBtn3b"><img id="card" value="CARD" src="img/card.png"/>
-
 							</li>
 							<li>
-								<div id = "speaker4">
-              						<audio id="travel">
-                  						<source src = "sounds/travel.mp3" type = "audio/mpeg"/>
-                					</audio>
-
-                   				<img src="img/speaker-icon-white.png" width= "100px" height= "100px" onClick="document.getElementById('travel').play(); return false;" /></div>
-
+								<div id="speaker4">
+		  						<audio id="travel">
+		    						<source src="sounds/travel.mp3" type="audio/mpeg"/>
+		    					</audio>
+		       				<img src="img/speaker-icon-white.png" width= "100px" height= "100px" onClick="document.getElementById('travel').play(); return false;" />
+								</div>
 								<span><label for="q4">To travel on the bus you will need your...  <br></label></span>
-
-
 								<input type="radio" id="ansBtn4a" name="ansBtn4" value="card"><label for="ansBtn4a"><img id="card" value="CARD" src="img/card.png"/><br/>
 								<input type="radio" id="ansBtn4b" name="ansBtn4" value="phone"><label for="ansBtn4b"><img id="phone" value="PHONE" src="img/phone2.png" width="65" height="120">
 							</li>
@@ -121,11 +100,11 @@
 						<button class="submit" type="submit">Send answers</button>
 						<div class="controls">
 							<button class="next"></button>
-							<div id = "speaker5">
+							<div id="speaker5">
 	  						<audio id="next">
-	      						<source src = "sounds/next.mp3" type = "audio/mpeg"/>
+      						<source src="sounds/next.mp3" type="audio/mpeg"/>
 	    					</audio>
-	       				<img src="img/speaker-icon-white.png" width="100px" height="100px" align = "right" onClick="document.getElementById('next').play(); return false;" />
+	       				<img src="img/speaker-icon-white.png" width="100px" height="100px" align="right" onClick="document.getElementById('next').play(); return false;" />
 							</div>
 							<div class="progress"></div>
 							<span class="number">
@@ -144,6 +123,7 @@
 		<script src="js/stepsForm.js"></script>
 		<script>
 
+
 			var theForm = document.getElementById( 'theForm' );
       //disable form autocomplete
       theForm.setAttribute( "autocomplete", "off" );
@@ -152,8 +132,8 @@
 					// hide questions
 					classie.addClass( theForm.querySelector( '.simform-inner' ), 'hide' );
 
-					// var score = 20;
-					// document.newer.score.value = del + score;
+					// var score=20;
+					// document.newer.score.value=del + score;
 
 					// dynamic css here
 					document.getElementById("msg").style.display="none";
@@ -165,7 +145,7 @@
 					f.setAttribute('id', "finalForm");
 
 					var name = document.createElement("div");
-			        name.innerHTML = "NAME: ";
+	        name.innerHTML="NAME: ";
 
 					var i = document.createElement("input"); //input element, text
 					i.setAttribute('type', "text");
@@ -174,7 +154,7 @@
 					i.setAttribute('id', "input1");
 
 					var score = document.createElement("div");
-			        score.innerHTML = "SCORE: ";
+	        score.innerHTML = "SCORE: ";
 
 					var j = document.createElement("input"); //input element, text
 					j.setAttribute('type', "text");
@@ -199,14 +179,13 @@
 					// dynamic form appended to temp div
 					document.getElementById('temp').appendChild(f);
 
-					document.getElementById('rem').style.visibility = 'hidden';
-					//document.getElementById('show1').style.visibility = 'visible';
+					document.getElementById('rem').style.visibility='hidden';
+					//document.getElementById('show1').style.visibility='visible';
 					var finish = document.createElement("div");
-			        finish.innerHTML = "ENTER YOUR NAME AND SAVE YOUR SCORE!";
-
-			        document.getElementById('rem1').appendChild(finish);
+	        finish.innerHTML = "ENTER YOUR NAME AND SAVE YOUR SCORE!";
+	        document.getElementById('rem1').appendChild(finish);
 					var audio = new Audio('sounds/trumpet.mp3');
-                  	audio.play();
+					audio.play();
 				}
 			} );
 		</script>

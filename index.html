@@ -3,42 +3,475 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Let's Go</title>
+
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+    <link href="css/chardinjs.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="js/drag.js"></script>
+		<script src="js/modernizr.custom.js"></script>
+    <script src="js/chardinjs.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
   </head>
   <body>
     <div id="main_container">
       <div id="split-layout">
 
+        <div id="index">
+          <section class="half bg-white">
+            <img class="logo" src="img/logo.png" />
+            <div class="intro-content">
+              <a class="container-link" id="nav-instructor_nav">
+                <img src="img/intro-instructor.jpg" class="intro-img rounded" />
+                <p><span>Are you...</span></p>
+                <span class="btn-large bg-blue">An Instructor?</span>
+              </a>
+            </div>
+          </section>
+
+          <section class="half bg-blue side-right">
+            <div class="intro-content">
+              <a class="container-link" id="nav-game_nav">
+                <img src="img/intro-trainee.jpg" class="intro-img rounded" />
+                <p><span>Are you...</span></p>
+                <span class="btn-large bg-white">A Trainee?</span>
+              </a>
+              <div id="speaker1">
+                <audio id="student_audio">
+                  <source src="sounds/studentAudio.mp3" type="audio/mpeg"/>
+                </audio>
+                <img class="speaker-icon" src="img/speaker-icon-white.png" onClick="document.getElementById('student_audio').play(); return false;" />
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+
+      <div id="instructor_nav">
         <section class="half bg-white">
-          <img class="logo" src="img/logo.png" />
           <div class="intro-content">
-            <a class="container-link" href="instructor_nav.html">
-              <img src="img/intro-instructor.jpg" class="intro-img rounded" />
-              <p><span>Are you...</span></p>
-              <span class="btn-large bg-blue">An Instructor?</span>
+            <a class="container-link" id="nav-player_progress">
+              <img src="img/drag.png" class="intro-img rounded image-full" />
+              <p><span>Get Ready</span></p>
+              <span class="btn-large bg-blue">View Progress</span>
             </a>
           </div>
         </section>
 
         <section class="half bg-blue side-right">
           <div class="intro-content">
-            <a class="container-link" href="game_nav.html">
-              <img src="img/intro-trainee.jpg" class="intro-img rounded" />
-              <p><span>Are you...</span></p>
-              <span class="btn-large bg-white">A Trainee?</span>
+            <a class="container-link">
+              <img src="img/anim.png" class="intro-img rounded image-full" />
+              <p><span>Get the Bus</span></p>
+              <span class="btn-large bg-white">View Progress</span>
             </a>
-            <div id="speaker1">
-              <audio id="student_audio">
-                <source src="sounds/studentAudio.mp3" type="audio/mpeg"/>
-              </audio>
-              <img class="speaker-icon" src="img/speaker-icon-white.png" onClick="document.getElementById('student_audio').play(); return false;" />
-            </div>
+          </div>
+        </section>
+      </div>
+
+      <div id="player_progress">
+        <p>Player Progress - Let's Go</p>
+        <pre id="player_data"></pre>
+      </div>
+
+
+      <!-- Game Stuff -->
+
+      <div id="game_nav">
+        <section class="half bg-white">
+          <div class="intro-content">
+            <a class="container-link" id="nav-game">
+              <img src="img/drag.png" class="intro-img rounded image-full" />
+              <p><span>Drag &amp; Drop Game</span></p>
+              <span class="btn-large bg-blue">Get Ready</span>
+            </a>
+          </div>
+
+          <div id="speaker1">
+            <audio id="getReady">
+              <source src="sounds/getReady.mp3" type="audio/mpeg"/>
+            </audio>
+            <img class="speaker-icon" src="img/speaker-icon-white.png" onClick="document.getElementById('getReady').play(); return false;" />
           </div>
         </section>
 
+        <section class="half bg-blue side-right">
+          <div class="intro-content">
+            <a class="container-link">
+              <img src="img/anim.png" class="intro-img rounded image-full" />
+              <p><span>Get the Bus</span></p>
+              <span class="btn-large bg-white">Educational Animations</span>
+            </a>
+          </div>
+        </section>
       </div>
+
+      <div id="game">
+        <div class="wrapper">
+          <div class="list-c">
+            <img src="img/list1.png" width="4" height="8" alt="list">
+            <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          </div>
+
+          <form id="track">
+            <span id="score1">Score: </span>
+            <input id="score" type="text" name="score">
+            <a id="arrow" class="nav-test">
+              <img id="pointer"  src="img/go.png" />
+              <div id="gospeaker">
+                <img src="img/speaker-icon-white.png" id="gospeaker" width="70px" height="70px" onClick="document.getElementById('go').play(); return false;">
+                <audio id="go">
+                  <source src="sounds/go.mp3" type="audio/mpeg"/>
+                </audio>
+              </div>
+            </a>
+          </form>
+
+          <div class="help">
+            <img id ="button" src="img/help1.png">
+            <div id="speaker1">
+              <audio id="help">
+                <source src="sounds/help.mp3" type="audio/mpeg"/>
+              </audio>
+              <img src="img/speaker-icon-white.png" onClick="document.getElementById('help').play(); return false;" />
+            </div>
+          </div>
+
+          <!--table items-->
+          <div id="keyDiv" value="KEYS" class="draggable">
+            <img id="keys" value="KEYS" src="img/keys.png" draggable="true" ondragstart="drag(event)" width="154" height="30">
+            <p class="text">KEYS</p>
+          </div>
+          <div id="phoneDiv" class="draggable">
+            <img id="phone" value="PHONE" src="img/phone2.png" draggable="true" ondragstart="drag(event)" width="65" height="120">
+            <p class="text">PHONE</p>
+          </div>
+          <div id="walletDiv" class="draggable">
+            <img id="wallet" value="WALLET" src="img/wallet.png" draggable="true" ondragstart="drag(event)" width="120" height="120">
+            <p class="text">WALLET</p>
+          </div>
+          <div id="pencilDiv" class="draggable">
+            <img id="pencil" value="PENCIL" src="img/pencil.png" draggable="true" ondragstart="drag(event)"width="160" height="80">
+            <p class="text">PENCIL</p>
+          </div>
+          <div id="staplerDiv" class="draggable">
+            <img id="stapler" value="STAPLER" src="img/stapler.png" draggable="true" ondragstart="drag(event)" width="150" height="55">
+            <p class="text">STAPLER</p>
+          </div>
+          <div id="bookDiv" class="draggable">
+            <img id="book" value="BOOK" src="img/book.png" draggable="true" ondragstart="drag(event)" width="209" height="157">
+            <p class="text">BOOK</p>
+          </div>
+          <div id="cardDiv" class="draggable">
+            <img id="card" value="TRAVEL PASS" src="img/ice3.png" draggable="true" ondragstart="drag(event)" width="209" height="157">
+            <p class="text">TRAVEL PASS</p>
+          </div>
+        </div>
+        <div id="dialog" class="test" title="HOW TO PLAY">
+          <p id="big">
+            <img src="img/demo.gif" style="width:800px;height:600px">
+            <br><br>
+            Drag the important items from the table, into the red boxes on the right.
+          </p>
+          <div id="speaker1demo">
+            <audio id="demo">
+              <source src="sounds/demo.mp3" type="audio/mpeg"/>
+            </audio>
+            <img src="img/speaker-icon-white.png" width= "50px" height="50px" onClick="document.getElementById('demo').play(); return false;" />
+          </div>
+        </div>
+        <script>
+          $("#button").click(function(){
+            $("#dialog").dialog({
+              maxHeight: "590px",
+              width: "830px",
+              modal: true,
+              resizable: false
+            });
+          });
+          $("#dialog").hide();
+        </script>
+      </div>
+
+      <div class="container" id="test">
+  			<!--temporarily holds data-->
+  			<form name="form2">
+  				<input type="hidden" name="score2">
+  			</form>
+  			<form id="msg" name="newer">
+  				<span id="score1">Score: </span><input id="score" type="text" name="score" value="">
+  			</form>
+  			<header class="memory-header">
+  				<h1 id="rem"><b>Can you remember the important items?</b></h1>
+  				<h1 id="rem1"><b></b></h1>
+  			</header>
+  			<section>
+  			<!--used for dynamic form append-->
+  			<div id="temp"></div>
+  			<script lang="javascript">
+  				var locate=window.location;
+  				document.form2.score2.value=locate;
+  				var text=document.form2.score2.value;
+
+  					// function keepScore(question, answer)
+  					// {
+  					// 	if(question == 1 && answer == 1){
+  					// 		return 5;
+  					// 	}
+  					// 	else{
+  					// 		return 0;
+  					// 	}
+
+  					// }
+  				 //   var del=keepScore(1,1);
+
+  			</script>
+  				<form id="theForm" class="simform">
+  					<div class="simform-inner">
+  						<ol class="questions">
+  							<li>
+  								<div id="speaker1">
+        						<audio id="payforthings">
+  	      						<source src="sounds/payforthings.mp3" type="audio/mpeg"/>
+          					</audio>
+             				<img src="img/speaker-icon-white.png" width= "100px" height= "100px" onClick="document.getElementById('payforthings').play(); return false;" />
+  								</div>
+  								<span><label for="q1">To pay for things you will need your...  <br></label></span>
+  								<input type="radio" id="ansBtn1a" name="ansBtn1" value="wallet" width="50px" height="50px"><label for="ansBtn1a"><img id="wallet" value="WALLET" src="img/wallet.png" width="120" height="120"></label><br/>
+  								<input type="radio" id="ansBtn1b" name="ansBtn1" value="keys"><label for="ansBtn1b"><img id="keys" value="KEYS" src="img/keys.png" width ="205" height= "60">
+  							</li>
+  							<li>
+  								<div id="speaker2">
+  	    						<audio id="callortext">
+  	      						<source src="sounds/callortext.mp3" type="audio/mpeg"/>
+  	      					</audio>
+  	         				<img src="img/speaker-icon-white.png" width="100px" height="100px"  onClick="document.getElementById('callortext').play(); return false;" />
+             			</div>
+  								<span><label for="q2">To call or text you will need a...  <br></label></span>
+                  <input type="radio" id="ansBtn2a" name="ansBtn2" value="phone"><label for="ansBtn2a"><img id="phone" value="PHONE" src="img/phone2.png" width="65" height="120"><br/>
+  								<input type="radio" id="ansBtn2b" name="ansBtn2" value="card"><label for="ansBtn2b"><img id="card" value="CARD" src="img/card.png"/>
+  							</li>
+  							<li>
+  								<div id="speaker3">
+  	    						<audio id="house">
+  	      						<source src="sounds/house.mp3" type="audio/mpeg"/>
+  	      					</audio>
+             				<img src="img/speaker-icon-white.png" width= "100px" height= "100px" onClick="document.getElementById('house').play(); return false;" />
+  								</div>
+  								<span><label for="q3">To get into the house you will need your...  <br></label></span>
+  								<input type="radio" id="ansBtn3a" name="ansBtn3" value="keys"><label for="ansBtn3a"><img id="keys" value="KEYS" src="img/keys.png" width ="205" height= "60"><br/>
+  								<input type="radio" id="ansBtn3b" name="ansBtn3" value="card"><label for="ansBtn3b"><img id="card" value="CARD" src="img/card.png"/>
+  							</li>
+  							<li>
+  								<div id="speaker4">
+  		  						<audio id="travel">
+  		    						<source src="sounds/travel.mp3" type="audio/mpeg"/>
+  		    					</audio>
+  		       				<img src="img/speaker-icon-white.png" width= "100px" height= "100px" onClick="document.getElementById('travel').play(); return false;" />
+  								</div>
+  								<span><label for="q4">To travel on the bus you will need your...  <br></label></span>
+  								<input type="radio" id="ansBtn4a" name="ansBtn4" value="card"><label for="ansBtn4a"><img id="card" value="CARD" src="img/card.png"/><br/>
+  								<input type="radio" id="ansBtn4b" name="ansBtn4" value="phone"><label for="ansBtn4b"><img id="phone" value="PHONE" src="img/phone2.png" width="65" height="120">
+  							</li>
+  						</ol>
+
+  						<!-- /questions -->
+  						<button class="submit" type="submit">Send answers</button>
+  						<div class="controls">
+  							<button class="next"></button>
+  							<div id="speaker5">
+  	  						<audio id="next">
+        						<source src="sounds/next.mp3" type="audio/mpeg"/>
+  	    					</audio>
+  	       				<img src="img/speaker-icon-white.png" width="100px" height="100px" align="right" onClick="document.getElementById('next').play(); return false;" />
+  							</div>
+  							<div class="progress"></div>
+  							<span class="number">
+  								<span class="number-current"></span>
+  								<span class="number-total"></span>
+  							</span>
+  							<span class="error-message"></span>
+  						</div>
+  					</div>
+  					<span class="final-message"></span>
+  				</form>
+  			</section>
+  		</div>
+
+  		<script src="js/classie.js"></script>
+  		<script src="js/stepsForm.js"></script>
+
+      <div id="congrats">
+        <a id="nav-index" class="full-size">
+          <img src="./img/congrats.jpg" style="margin-left:0px; width:800px;margin:auto;"/>
+        </a>
+      </div>
+
+      <script>
+      var data;
+      if(typeof(Storage) !== undefined) {
+        console.log("local storage available");
+        if(localStorage.letsgodata !== undefined){
+          console.log( JSON.parse(localStorage.letsgodata) );
+          data = JSON.parse(localStorage.letsgodata);
+        } else {
+          console.log("Setting up new data object");
+          data = {
+            "player_count": 0,
+            "players": []
+          };
+          localStorage.letsgodata = JSON.stringify(data);
+        }
+      } else {
+        console.log("No Storage Available");
+      }
+
+      function syncData(){
+        localStorage.letsgodata = JSON.stringify(data);
+      };
+
+      function populatePlayerScores(){
+        $("#player_data").text( JSON.stringify(data, null, '\t') );
+      }
+
+      var current_player;
+      function newGame(){
+        data.player_count += 1;
+        // set variables to empty
+         current_player = {
+          player_id: (data.player_count),
+          player_name: "",
+          player_scores: {
+            q1: 0,
+            q2: 0
+          }
+        }
+        syncData();
+      }
+
+      function syncPlayer(player){
+        data.players[player.player_id] = player;
+        syncData();
+      }
+
+      // Navigation
+        $("#nav-game_nav").on("click", function(){
+          $("#index").hide();
+          $("#game_nav").show();
+        });
+
+        $("#nav-instructor_nav").on("click", function(){
+          $("#index").hide();
+          $("#instructor_nav").show();
+        });
+
+        $("#nav-game").on("click", function(){
+          newGame();
+          $("#game_nav").hide();
+          $("#game").show();
+        });
+
+        $("#nav-test, .nav-test").on("click", function(){
+          current_player.player_scores.q1 = score;
+          score = 0;
+          $("#game").hide();
+          $("#test").show();
+        });
+
+        $("#nav-player_progress").on("click", function(){
+          $("#instructor_nav").hide();
+          $("#player_progress").show();
+          populatePlayerScores();
+        });
+
+        $("body").on("click", "#nav-congrats", function(){
+          $("#test").hide();
+          score = current_player.player_scores.q1 + current_player.player_scores.q2;
+          current_player.player_name = $("#nameInput").val();
+          syncPlayer(current_player);
+          $("#congrats").show();
+        });
+
+        $("body").on("click", "#nav-index", function(){
+          console.log(current_player);
+          $("#congrats").hide();
+          $("#index").show();
+        });
+
+
+  			var theForm = document.getElementById( 'theForm' );
+        //disable form autocomplete
+        theForm.setAttribute( "autocomplete", "off" );
+  			new stepsForm( theForm, {
+  				onSubmit : function( form ) {
+  					// hide questions
+  					classie.addClass( theForm.querySelector( '.simform-inner' ), 'hide' );
+
+  					// var score=20;
+  					// document.newer.score.value=del + score;
+
+  					// dynamic css here
+  					document.getElementById("msg").style.display="none";
+
+  					// dynamically generate html form
+  					var f = document.createElement("form");
+  					f.setAttribute('id', "finalForm");
+
+  					var name = document.createElement("div");
+  	        name.innerHTML="NAME: ";
+
+  					var i = document.createElement("p"); //input element, text
+  					i.innerHTML = current_player.player_scores.q1 + current_player.player_scores.q2;
+
+  					var score = document.createElement("div");
+  	        score.innerHTML = "SCORE: ";
+
+  					var j = document.createElement("input"); //input element, text
+  					j.setAttribute('type', "text");
+  					j.setAttribute('name', "name");
+  					j.setAttribute('value', "");
+  					j.setAttribute('id', "nameInput");
+
+  					var s = document.createElement("a"); //input element, Submit button
+  					s.setAttribute('id', "nav-congrats");
+  					s.innerHTML = "Save";
+
+  					// autosubmit form
+  					// f.submit();
+  					f.appendChild(name);
+  					f.appendChild(j);
+  					f.appendChild(document.createElement('br'));
+  					f.appendChild(score);
+  					f.appendChild(i);
+  					f.appendChild(document.createElement('br'));
+  					f.appendChild(document.createElement('br'));
+  					f.appendChild(s);
+  					// dynamic form appended to temp div
+  					document.getElementById('temp').appendChild(f);
+
+  					document.getElementById('rem').style.visibility='hidden';
+  					//document.getElementById('show1').style.visibility='visible';
+  					var finish = document.createElement("div");
+  	        finish.innerHTML = "ENTER YOUR NAME AND SAVE YOUR SCORE!";
+  	        document.getElementById('rem1').appendChild(finish);
+  					var audio = new Audio('sounds/trumpet.mp3');
+  					audio.play();
+  				}
+  			} );
+  		</script>
     </div>
   </body>
 </html>

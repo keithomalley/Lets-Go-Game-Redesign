@@ -1,5 +1,5 @@
 ﻿;( function( window ) {
-	
+
 	'use strict';
 
 	var transEndEventNames = {
@@ -13,7 +13,7 @@
 		support = { transitions : Modernizr.csstransitions };
 
 	function extend( a, b ) {
-		for( var key in b ) { 
+		for( var key in b ) {
 			if( b.hasOwnProperty( key ) ) {
 				a[key] = b[key];
 			}
@@ -58,28 +58,8 @@
 		else{
 			return 0;
 		}
-		
+
 	}
-
-	/*function keepScore(form) {
-		var answers = new Array();
-		answers[0] = ['wallet', question1];
-		answers[1] = ['phone', question2];
-		answers[2] = ['keys', question3];
-		answers[3] = ['card', question4];
-
-		var theScore = 0;
-
-		for (i=0; i < answers.length; i++) {
-			currQuestionObject = answers[i][1];
-				for (j=0; j<currQuestionObject.length; j++){
-					if (currQuestionObject[j].checked && currQuestionObject[j].value == answers[i][0] ) {
-					theScore++;
-					break;
-				}
-		}
-	}
-	}*/
 
 	stepsForm.prototype._init = function() {
 
@@ -99,13 +79,13 @@
 		this.questionsCount = this.questions.length;
 		// show first question
 		classie.addClass( this.questions[0], 'current' );
-		
+
 		// next question control
 		this.ctrlNext = this.el.querySelector( 'button.next' );
 
 		// progress bar
 		this.progress = this.el.querySelector( 'div.progress' );
-		
+
 		// question number status
 		this.questionStatus = this.el.querySelector( 'span.number' );
 		// current question placeholder
@@ -117,11 +97,11 @@
 
 		// error message
 		this.error = this.el.querySelector( 'span.error-message' );
-		
+
 		// checks for HTML5 Form Validation support
 		// a cleaner solution might be to add form validation to the custom Modernizr script
 		this.supportsHTML5Forms = typeof document.createElement("input").checkValidity === 'function';
-		
+
 		// init events
 		this._initEvents();
 	};
@@ -140,9 +120,9 @@
 		firstElInput.addEventListener( 'focus', onFocusStartFn );
 
 		// show next question
-		this.ctrlNext.addEventListener( 'click', function( ev ) { 
+		this.ctrlNext.addEventListener( 'click', function( ev ) {
 			ev.preventDefault();
-			self._nextQuestion(); 
+			self._nextQuestion();
 		} );
 
 		// pressing enter will jump to next question
@@ -161,7 +141,7 @@
 			// tab
 			if( keyCode === 9 ) {
 				ev.preventDefault();
-			} 
+			}
 		} );
 	};
 
@@ -180,7 +160,7 @@
 			// clear any previous error messages
 			input.setCustomValidity( '' );
 
-			
+
 			// checks input against the validation constraint
 			if ( !input.checkValidity() ) {
 				// Optionally, set a custom HTML5 valiation message
@@ -277,7 +257,7 @@
 		//var score = del+counter;
 
 		document.newer.score.value = score;
-
+		current_player.player_scores.q2 = score;
 	}
 
 	// submits the form
@@ -308,7 +288,7 @@
 		if (input1[0].checked !== true && this.current == 0) {
 			this._showError( 'OTHER' );
 			return false;
-		} 
+		}
 		else{
 			input1[0].checked = false;
 		}
@@ -316,7 +296,7 @@
 		if (input2[0].checked !== true  && this.current == 1) {
 			this._showError( 'OTHER' );
 			return false;
-		} 
+		}
 		else{
 			input2[0].checked = false;
 		}
@@ -324,7 +304,7 @@
 		if (input3[0].checked !== true  && this.current == 2) {
 			this._showError( 'OTHER' );
 			return false;
-		} 
+		}
 		else{
 			input3[0].checked = false;
 		}
@@ -332,7 +312,7 @@
 		if (input4[0].checked !== true  && this.current == 3) {
 			this._showError( 'OTHER' );
 			return false;
-		} 
+		}
 		else{
 			input4[0].checked = false;
 		}
@@ -340,14 +320,14 @@
         // if (input2[0].checked !== true) {
         //             this._showError( 'OTHER' );
         //             return false;
-        //         } 
+        //         }
 		return true;
 	}
 
 	stepsForm.prototype._showError = function( err ) {
 		var message = '';
 		switch( err ) {
-			case 'OTHER' : 
+			case 'OTHER' :
 				message = 'Are you sure that is correct?';
 				break;
 			// ...

@@ -18,7 +18,7 @@ a {
 
 #logo{
 	position: relative;
-	top:-90px;	
+	top:-90px;
 }
 
 #score{
@@ -29,7 +29,7 @@ a {
     font-weight: 700;
     background-color: transparent;
     text-align: center;
-    border:0px;  
+    border:0px;
 	margin-top: 54px;
 }
 
@@ -72,7 +72,6 @@ a:hover, a:focus {
 
 /*questions*/
 section {
-	padding: 5em 2em 15em;
 	background: #008bcc;
 	text-align: center;
 }

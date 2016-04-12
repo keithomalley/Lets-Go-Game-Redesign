@@ -100,3 +100,22 @@ a {
   height:360px;
   border-radius: 360px;
 }
+
+#index {
+	display:block;
+}
+
+#game, #instructor_nav, #game_nav, #congrats, #test, #player_progress {
+	display:none;
+}
+
+#player_progress {
+	background: #ffffff;
+	width:100%;
+	height:100%;
+	color:#3f3f3f;
+}
+
+#test {
+	background:#ffffff;
+}

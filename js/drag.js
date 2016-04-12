@@ -41,6 +41,8 @@ function drop(ev) {
       current.value = score;
 
     } else {
+      score=score-1;
+      current.value = score;
       var audio = new Audio('sounds/wrong1.wav');
       audio.play();
     }
